@@ -7,6 +7,8 @@ class MultiheadAttention(nn.Module):
         super(MultiheadAttention, self).__init__()
         self.d_model = d_model
         self.h = h # number of heads
+        if self.d_model % self.h != 0:
+            raise ValueError("d_model must be divisible by h")
         self.d_k = d_model // h # head dimentions
         
         '''
