@@ -2,9 +2,9 @@ import torch.nn as nn
 
 from .attention import Attention
 
-class MultiheadAttention(nn.Module):
+class MultiHeadAttention(nn.Module):
     def __init__(self, d_model, h):
-        super(MultiheadAttention, self).__init__()
+        super(MultiHeadAttention, self).__init__()
         self.d_model = d_model
         self.h = h # number of heads
         if self.d_model % self.h != 0:
